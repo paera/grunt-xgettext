@@ -114,13 +114,37 @@ module.exports = function(file, options) {
 
     _.each(fn, function(func) {
         var regex = new RegExp("\\{\\{\\s*" + func + "\\s+(.*?)\\}\\}", "g");
+        var blockRegex = new RegExp("\\{\\{*\\#" + func + "[\\s\\S]*?\\}\\}([\\s\\S]*?)\\{\\{\\/" + func + "\\}\\}", "g");
         var result;
+        var blockResult;
+
+        var tokenized = [];
+
         while ((result = regex.exec(contents)) !== null) {
             var tokens = tokenize(result[1]);
+
             if (tokens.length === 0 || tokens[0].type !== "string") {
                 continue;
             }
 
+            tokenized.push(tokens);
+        }
+
+        while ((blockResult = blockRegex.exec(contents)) !== null) {
+            var re = /"/g
+            var replaced = blockResult[1].replace(re,'\\"');
+
+            var wrapped = "\"" + replaced + "\"";
+            var tokens2 = tokenize(wrapped);
+
+            if (tokens2.length === 0 || tokens2[0].type !== "string") {
+                continue;
+            }
+
+            tokenized.push(tokens2);
+        }
+
+        _.each(tokenized, function(tokens) {
             var message = {
                 singular: tokens[0].value,
                 message: ""
@@ -132,14 +156,13 @@ module.exports = function(file, options) {
                 if (token.type === "hash") {
                     if (token.key === "comment" || token.key === "context" &&
                         token.value.type === "string") {
-
                         message[token.key] = token.value.value;
                     }
                 }
             });
-
             collector.addMessage(message);
-        }
+        });
+
     });
 
     return collector.messages;

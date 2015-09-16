@@ -1,5 +1,6 @@
 grunt-xgettext.*
 
+.idea
 node_modules
 npm-debug.log
 tmp

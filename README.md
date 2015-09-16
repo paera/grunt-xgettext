@@ -2,6 +2,20 @@
 
 > Grunt xgettext plugin for JavaScript, HTML and Handlebars
 
+## This is a fork of https://github.com/arendjr/grunt-xgettext
+
+Adds a naive solution to block extraction in handlebars files.
+
+### Usage:
+
+```
+{{#tr}}
+    A test block with a <a href="link">link</a>
+    Line 2
+{{/tr}}
+```
+
+
 ## Introduction
 
 Gettext is the name of a set of utilities developed by GNU to add multi-language support to
