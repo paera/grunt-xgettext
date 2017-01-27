@@ -28,22 +28,23 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.5"
+    "babel-preset-es2015": "^6.22.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
-    "esprima": "^2.0.0",
-    "lodash": "^2.4.1",
-    "temp-write": "^1.1.0",
-    "babel": "4.3.0"
+    "babel": "4.3.0",
+    "chalk": "^1.1.3",
+    "esprima": "^3.1.3",
+    "lodash": "^4.17.4",
+    "temp-write": "^2.1.0"
   }
 }
