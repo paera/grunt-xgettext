@@ -108,10 +108,3 @@ msgstr ""
 
 msgid "Archive"
 msgstr ""
-
-msgid "Hallo from es6!"
-msgstr ""
-
-#. Say hallo will contain a name
-msgid "hallo {{name}} "
-msgstr ""
