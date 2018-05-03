@@ -17,7 +17,7 @@ msgctxt "Nederlands leren"
 msgid "Roos"
 msgstr ""
 
-msgid "\n    A test block with a <a href=\"link\">link</a>\n    Line 2\n"
+msgid "A test block with a <a href=\"link\">link</a>\n    Line 2"
 msgstr ""
 
 msgid "Mien"
@@ -52,6 +52,9 @@ msgid "Regel één\nRegel twee\nRegel drie"
 msgstr ""
 
 msgid "i18n.tr() should be extracted too"
+msgstr ""
+
+msgid "Trailing and leading spaces are removed"
 msgstr ""
 
 #. Translators: use all lower-case if months are not capitalized in your language

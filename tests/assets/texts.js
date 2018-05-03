@@ -27,6 +27,10 @@ function test4() {
 }
 
 function test5() {
+  tr("  Trailing and leading spaces are removed  ");
+}
+
+function test6() {
     tr("September", { comment: "Translators: use all lower-case if months are not " +
                                "capitalized in your language" })
 
@@ -36,7 +40,7 @@ function test5() {
     tr("Sept.", { context: "Abbreviation", comment: "Abbreviation of September" })
 }
 
-function test6() {
+function test7() {
     /// abbreviation: %1 day(s) ago
     tr("%1 d", "%1 d", days);
 

@@ -17,6 +17,7 @@ module.exports = function(file, options) {
     var collector = new (require("../lib/collector"));
 
     var fn = _.flatten([ options.functionName ]);
+    var processMessage = options.processMessage;
 
     function flattenIdentifier(identifier) {
         if (identifier.type === "Identifier") {
@@ -65,8 +66,8 @@ module.exports = function(file, options) {
                 comment: options.comment || "",
                 context: options.context || "",
                 message: "",
-                plural: plural || "",
-                singular: singular
+                plural: processMessage(plural || ""),
+                singular: processMessage(singular)
             };
 
             var lineIndex = syntax.loc.start.line - 2; // loc.start.line is 1-based

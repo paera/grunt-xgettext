@@ -146,11 +146,11 @@ module.exports = function(file, options) {
 
         _.each(tokenized, function(tokens) {
             var message = {
-                singular: tokens[0].value,
+                singular: options.processMessage(tokens[0].value),
                 message: ""
             };
             if (tokens.length > 2 && tokens[1].type === "string") {
-                message.plural = tokens[1].value;
+                message.plural = options.processMessage(tokens[1].value);
             }
             _.each(tokens, function(token) {
                 if (token.type === "hash") {

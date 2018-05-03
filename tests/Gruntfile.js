@@ -18,7 +18,8 @@ module.exports = function(grunt) {
             default_options: {
                 options: {
                     functionName: ["tr", "i18n.tr", "i18n"],
-                    potFile: "messages.pot"
+                    potFile: "messages.pot",
+                    processMessage: function(m) { return m.trim(); }
                 },
 
                 files: {
